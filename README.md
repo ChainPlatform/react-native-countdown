@@ -1,19 +1,19 @@
 # React Native Count Down Timer
-react-native-count-down-timer is a React Native library that provides a CountDown component that renders timer count down for react-native and react-native-web.
+@chainplatform/react-native-countdown is a React Native library that provides a CountDown component that renders timer count down for react-native and react-native-web.
 
-<a href="https://npmjs.com/package/react-native-count-down-timer">
-  <img src="https://img.shields.io/npm/v/react-native-count-down-timer.svg"></img>
-  <img src="https://img.shields.io/npm/dt/react-native-count-down-timer.svg"></img>
+<a href="https://npmjs.com/package/@chainplatform/react-native-countdown">
+  <img src="https://img.shields.io/npm/v/@chainplatform/react-native-countdown.svg"></img>
+  <img src="https://img.shields.io/npm/dt/@chainplatform/react-native-countdown.svg"></img>
 </a>
 <a href="https://twitter.com/intent/follow?screen_name=doansan"><img src="https://img.shields.io/twitter/follow/doansan.svg?label=Follow%20@doansan" alt="Follow @doansan"></img></a>
 
 ### Install
 ```
-npm install react-native-count-down-timer --save
+npm install @chainplatform/react-native-countdown --save
 ```
 or
 ```
-yarn add react-native-count-down-timer
+yarn add @chainplatform/react-native-countdown
 ```
 
 
@@ -22,7 +22,7 @@ yarn add react-native-count-down-timer
 ```js
 import React from 'react';
 import {StyleSheet} from 'react-native';
-import CountDown from 'react-native-count-down-timer';
+import CountDown from '@chainplatform/react-native-countdown';
 
 class App extends React.Component {
 
