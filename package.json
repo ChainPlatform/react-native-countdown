@@ -1,7 +1,7 @@
 {
-    "name": "@chainplatform/react-native-countdown",
-    "version": "0.1.0",
-    "description": "@chainplatform/react-native-countdown is a React Native library that provides a CountDown component that renders timer count down for react-native and react-native-web.",
+    "name": "@chainplatform/countdown",
+    "version": "0.1.1",
+    "description": "@chainplatform/countdown is a React Native library that provides a CountDown component that renders timer count down for react-native and react-native-web.",
     "main": "index.js",
     "devDependencies": {
         "react": "*",
@@ -13,7 +13,8 @@
         "react",
         "react-native",
         "react-native-web",
-        "@chainplatform/react-native-countdown"
+        "react-native-countdown",
+        "@chainplatform/countdown"
     ],
     "homepage": "https://github.com/ChainPlatform/react-native-countdown",
     "bugs": "https://github.com/ChainPlatform/react-native-countdown/issues",
