@@ -1,11 +1,27 @@
 # React Native Count Down
 @chainplatform/countdown is a React Native library that provides a CountDown component that renders timer count down for react-native and react-native-web.
 
-<a href="https://npmjs.com/package/@chainplatform/countdown">
-  <img src="https://img.shields.io/npm/v/@chainplatform/countdown.svg"></img>
-  <img src="https://img.shields.io/npm/dt/@chainplatform/countdown.svg"></img>
-</a>
-<a href="https://twitter.com/intent/follow?screen_name=doansan"><img src="https://img.shields.io/twitter/follow/doansan.svg?label=Follow%20@doansan" alt="Follow @doansan"></img></a>
+
+<p align="center">
+  <a href="https://github.com/ChainPlatform/react-native-countdown/blob/HEAD/LICENSE">
+    <img src="https://img.shields.io/badge/license-MIT-blue.svg" />
+  </a>
+  <a href="https://www.npmjs.com/package/@chainplatform/countdown">
+    <img src="https://img.shields.io/npm/v/@chainplatform/countdown?color=brightgreen&label=npm%20package" alt="Current npm package version." />
+  </a>
+  <a href="https://www.npmjs.com/package/@chainplatform/countdown">
+    <img src="https://img.shields.io/npm/dt/@chainplatform/countdown.svg"></img>
+  </a>
+  <a href="https://www.npmjs.com/package/@chainplatform/countdown">
+    <img src="https://img.shields.io/badge/platform-android%20%7C%20ios%20%7C%20web-blue"></img>
+  </a>
+  <a href="https://github.com/ChainPlatform/react-native-countdown/pulls">
+    <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs welcome!" />
+  </a>
+  <a href="https://twitter.com/intent/follow?screen_name=doansan">
+    <img src="https://img.shields.io/twitter/follow/doansan.svg?label=Follow%20@doansan" alt="Follow @doansan" />
+  </a>
+</p>
 
 ### Install
 ```

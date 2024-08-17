@@ -1,11 +1,12 @@
 {
     "name": "@chainplatform/countdown",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "@chainplatform/countdown is a React Native library that provides a CountDown component that renders timer count down for react-native and react-native-web.",
     "main": "index.js",
     "devDependencies": {
         "react": "*",
-        "react-native": "*"
+        "react-native": "*",
+        "sprintf-js": "*"
     },
     "author": "Chain Platform <santran686@gmail.com> (https://chainplatform.net/)",
     "license": "MIT",
