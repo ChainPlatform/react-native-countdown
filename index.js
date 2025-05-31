@@ -18,6 +18,7 @@ export default class CountDown extends Component {
         onChange: PropTypes.func,
         onPress: PropTypes.func,
         onFinish: PropTypes.func,
+        textLabels: PropTypes.object
     };
 
     state = {
@@ -132,26 +133,27 @@ export default class CountDown extends Component {
         </View>);
     }
 
-    renderSeparator = () => {
+    renderSeparator = (text = null) => {
         const { separatorStyle, size } = this.props;
         return (<View style={{ justifyContent: 'center', alignItems: 'center' }}>
-            <Text style={[styles.separatorTxt, { fontSize: size * 1.2 }, separatorStyle]}>{':'}</Text>
+            <Text style={[styles.separatorTxt, { fontSize: size * 1.2 }, separatorStyle]}>{text != null ? text : ':'}</Text>
         </View>);
     }
 
     renderCountDown = () => {
-        const { timeToShow, timeLabels, showSeparator } = this.props;
+        const { timeToShow, timeLabels, showSeparator, textLabels } = this.props;
         const { days, hours, minutes, seconds } = this.getTimeLeft();
         const newTime = sprintf('%02d:%02d:%02d:%02d', days, hours, minutes, seconds).split(':');
         const Component = this.props.onPress ? Pressable : View;
         return (<Component style={styles.timeCont} onPress={this.props.onPress}>
             {timeToShow.includes('D') ? this.renderDoubleDigits(timeLabels.d, newTime[0]) : null}
-            {showSeparator && timeToShow.includes('D') && timeToShow.includes('H') ? this.renderSeparator() : null}
+            {showSeparator && timeToShow.includes('D') && timeToShow.includes('H') ? this.renderSeparator(textLabels ? textLabels[0] : null) : null}
             {timeToShow.includes('H') ? this.renderDoubleDigits(timeLabels.h, newTime[1]) : null}
-            {showSeparator && timeToShow.includes('H') && timeToShow.includes('M') ? this.renderSeparator() : null}
+            {showSeparator && timeToShow.includes('H') && timeToShow.includes('M') ? this.renderSeparator(textLabels ? textLabels[1] : null) : null}
             {timeToShow.includes('M') ? this.renderDoubleDigits(timeLabels.m, newTime[2]) : null}
-            {showSeparator && timeToShow.includes('M') && timeToShow.includes('S') ? this.renderSeparator() : null}
+            {showSeparator && timeToShow.includes('M') && timeToShow.includes('S') ? this.renderSeparator(textLabels ? textLabels[2] : null) : null}
             {timeToShow.includes('S') ? this.renderDoubleDigits(timeLabels.s, newTime[3]) : null}
+            {showSeparator && timeToShow.includes('M') && timeToShow.includes('S') ? this.renderSeparator(textLabels ? textLabels[3] : null) : null}
         </Component>);
     }
 
