@@ -93,36 +93,36 @@ export default class CountDown extends Component {
         };
     };
 
-    renderDigit = (value) => {
+    renderDigit = (key, value) => {
         const { digitStyle, digitTxtStyle, size } = this.props;
         return (
-            <View style={[styles.digitCont, { width: size * 2.3, height: size * 2.6 }, digitStyle]}>
+            <View key={"sub_dg_" + key} style={[styles.digitCont, { width: size * 2.3, height: size * 2.6 }, digitStyle]}>
                 <Text style={[styles.digitTxt, { fontSize: size }, digitTxtStyle]}>{value}</Text>
             </View>
         );
     };
 
-    renderLabel = (label) => {
+    renderLabel = (key, label) => {
         const { timeLabelStyle, size } = this.props;
         if (!label) return null;
         return (
-            <Text style={[styles.timeTxt, { fontSize: size / 1.8 }, timeLabelStyle]}>
+            <Text key={"lb_dg_" + key} style={[styles.timeTxt, { fontSize: size / 1.8 }, timeLabelStyle]}>
                 {label}
             </Text>
         );
     };
 
-    renderDoubleDigits = (label, digits) => (
-        <View style={styles.doubleDigitCont}>
-            <View style={styles.timeInnerCont}>{this.renderDigit(digits)}</View>
-            {this.renderLabel(label)}
+    renderDoubleDigits = (key, label, digits) => (
+        <View key={"dg_" + key} style={styles.doubleDigitCont}>
+            <View style={styles.timeInnerCont}>{this.renderDigit(key, digits)}</View>
+            {this.renderLabel(key, label)}
         </View>
     );
 
-    renderSeparator = (text = ':') => {
+    renderSeparator = (key, text = ':') => {
         const { separatorStyle, size } = this.props;
         return (
-            <View style={styles.separatorCont}>
+            <View key={"sp_dg_" + key} style={styles.separatorCont}>
                 <Text style={[styles.separatorTxt, { fontSize: size * 1.2 }, separatorStyle]}>
                     {text}
                 </Text>
@@ -138,19 +138,19 @@ export default class CountDown extends Component {
 
         const segments = [];
 
-        if (timeToShow.includes('D')) segments.push(this.renderDoubleDigits(timeLabels.d, formatted[0]));
+        if (timeToShow.includes('D')) segments.push(this.renderDoubleDigits(0, timeLabels.d, formatted[0]));
         if (showSeparator && timeToShow.includes('D') && timeToShow.includes('H'))
-            segments.push(this.renderSeparator(textLabels?.[0]));
+            segments.push(this.renderSeparator(0, textLabels?.[0]));
 
-        if (timeToShow.includes('H')) segments.push(this.renderDoubleDigits(timeLabels.h, formatted[1]));
+        if (timeToShow.includes('H')) segments.push(this.renderDoubleDigits(1, timeLabels.h, formatted[1]));
         if (showSeparator && timeToShow.includes('H') && timeToShow.includes('M'))
-            segments.push(this.renderSeparator(textLabels?.[1]));
+            segments.push(this.renderSeparator(1, textLabels?.[1]));
 
-        if (timeToShow.includes('M')) segments.push(this.renderDoubleDigits(timeLabels.m, formatted[2]));
+        if (timeToShow.includes('M')) segments.push(this.renderDoubleDigits(2, timeLabels.m, formatted[2]));
         if (showSeparator && timeToShow.includes('M') && timeToShow.includes('S'))
-            segments.push(this.renderSeparator(textLabels?.[2]));
+            segments.push(this.renderSeparator(2, textLabels?.[2]));
 
-        if (timeToShow.includes('S')) segments.push(this.renderDoubleDigits(timeLabels.s, formatted[3]));
+        if (timeToShow.includes('S')) segments.push(this.renderDoubleDigits(3, timeLabels.s, formatted[3]));
 
         return (
             <Cmp style={styles.timeCont} onPress={onPress}>
